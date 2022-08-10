@@ -157,6 +157,9 @@ ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login' # Default: '/'
 ACCOUNT_USERNAME_REQUIRED = False # Default: True
 
 
+ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
+
+
 # AUTHENTICATION SETTINGS
 AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_URL = 'account_login'

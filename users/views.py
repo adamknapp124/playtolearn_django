@@ -6,11 +6,8 @@ from allauth.account.views import PasswordChangeView
 
 from .forms import CustomUserChangeForm
 
-
 class CustomPasswordChangeView(PasswordChangeView):
     success_url = reverse_lazy('my-account')
-
-
 class MyAccountPageView(UpdateView):
     model = get_user_model()
     form_class = CustomUserChangeForm

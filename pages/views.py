@@ -1,12 +1,18 @@
-from django.views.generic import TemplateView
+from django.contrib import messages
+from .forms import ContactForm
+from django.urls import reverse_lazy
+from django.views.generic import FormView, TemplateView
+
 
 # Create your views here.
 class AboutUsView(TemplateView):
     template_name = 'pages/about_us.html'
 
 
-class ContactView(TemplateView):
+class ContactForm(FormView):
     template_name = 'pages/contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('pages:thanks')
 
 
 class HomePageView(TemplateView):
@@ -15,5 +21,4 @@ class HomePageView(TemplateView):
 
 class LoginView(TemplateView):
     template_name = 'pages/login.html'
-
 

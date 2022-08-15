@@ -12,13 +12,9 @@ class AboutUsView(TemplateView):
 class ContactForm(FormView):
     template_name = 'pages/contact.html'
     form_class = ContactForm
-    success_url = reverse_lazy('pages:thanks')
+    success_url = reverse_lazy('pages:thanks.html')
 
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
-
-
-class LoginView(TemplateView):
-    template_name = 'pages/login.html'
 

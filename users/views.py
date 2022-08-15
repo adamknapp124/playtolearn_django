@@ -8,9 +8,11 @@ from .forms import CustomUserChangeForm
 
 class CustomPasswordChangeView(PasswordChangeView):
     success_url = reverse_lazy('my-account')
+
 class MyAccountPageView(UpdateView):
     model = get_user_model()
     form_class = CustomUserChangeForm
+    success_message = 'Update Successful'
     template_name = 'account/my_account.html'
 
     def get_object(self):
